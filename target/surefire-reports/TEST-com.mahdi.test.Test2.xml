@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mahdi.test.Test2" time="34.396" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mahdi.test.Test2" time="35.327" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
-    <property name="sun.java.command" value="C:\Users\dkmods\AppData\Local\Temp\surefire15908819284578739714\surefirebooter538732896703862897.jar C:\Users\dkmods\AppData\Local\Temp\surefire15908819284578739714 2023-09-26T09-01-02_836-jvmRun1 surefire1356903215984506199tmp surefire_02921070879909575557tmp"/>
+    <property name="sun.java.command" value="C:\Users\dkmods\AppData\Local\Temp\surefire7125663952468459720\surefirebooter10272676751024683123.jar C:\Users\dkmods\AppData\Local\Temp\surefire7125663952468459720 2023-09-27T03-32-11_087-jvmRun1 surefire17493029885289470169tmp surefire_06077102869396351039tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\scheduling_project\target\test-classes;C:\scheduling_project\target\classes;C:\Users\dkmods\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\dkmods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\dkmods\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\dkmods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -26,12 +26,11 @@
     <property name="java.home" value="C:\Program Files\Java\jdk-20"/>
     <property name="file.separator" value="\"/>
     <property name="basedir" value="C:\scheduling_project"/>
-    <property name="style.color" value="always"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\dkmods\AppData\Local\Temp\surefire15908819284578739714\surefirebooter538732896703862897.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\dkmods\AppData\Local\Temp\surefire7125663952468459720\surefirebooter10272676751024683123.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="20.0.2+9-78"/>
@@ -51,7 +50,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-20\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk-19/bin/server;C:/Program Files/Java/jdk-19/bin;C:\Program Files\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-20\bin;C:\apache-maven-3.9.4\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\dkmods\AppData\Local\Microsoft\WindowsApps;C:\Users\dkmods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dkmods\.dotnet\tools;C:\MinGW\bin;C:\Users\dkmods\AppData\Local\GitHubDesktop\bin;C:\Users\dkmods\Desktop;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-20\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\dkmods\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\dkmods\bin;C:\Program Files\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\dotnet;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-20\bin;C:\apache-maven-3.9.4\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\dkmods\AppData\Local\Microsoft\WindowsApps;C:\Users\dkmods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dkmods\.dotnet\tools;C:\MinGW\bin;C:\Users\dkmods\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -59,16 +58,16 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="test" classname="com.mahdi.test.Test2" time="34.323">
+  <testcase name="test" classname="com.mahdi.test.Test2" time="35.262">
     <system-out><![CDATA[process 2 arrives
-process 3 arrives
 process 1 arrives
+process 3 arrives
 terminated with
 Pid AT BT   CT     TT     WT
-P1  0 10 34264 34264.0 24264.0
-P2  0 15 30253 30253.0 15253.0
-P3  0 5 20093 20093.0 15093.0
-AVG Waiting Time 18203.334
+P1  0 10 35190 35190.0 25190.0
+P2  0 15 31184 31184.0 16184.0
+P3  0 5 25143 25143.0 20143.0
+AVG Waiting Time 20505.666
 ]]></system-out>
   </testcase>
 </testsuite>

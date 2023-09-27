@@ -36,7 +36,7 @@
 				<configuration>
 					<includes>
 						<!-- Choose which Test to run by changing test number -->
-						<include>com.mahdi.test/Test2.java</include>
+						<include>com.mahdi.test/Test1.java</include>
 					</includes>
 					<parallel>classes</parallel>
 					<threadCount>10</threadCount>
