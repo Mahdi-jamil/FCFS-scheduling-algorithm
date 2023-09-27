@@ -20,7 +20,9 @@ public class MainTest {
 	private static volatile Boolean terminate=false;
 	
 	private static float avgWT;
-	
+
+	// this function is used by Test Cases 
+	// To run from main just edit line 45 to your File path
 	public static float Main(String[] args) {
 		try {
 			main(args);
