@@ -28,7 +28,7 @@ This Java program simulates the First-Come-First-Serve (FCFS) scheduling algorit
 10. Review the program's output.
 
 
-### 6. Example Output
+###  Example Output
 
 
 ```markdown
