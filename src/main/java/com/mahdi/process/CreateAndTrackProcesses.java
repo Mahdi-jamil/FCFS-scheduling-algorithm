@@ -55,7 +55,7 @@ public class CreateAndTrackProcesses {
 		}
 		MainTest.NUMBER_OF_PROCESSES=count;
 		in.close();
-		return p;
+		return processList;
 		
 	}
 	
@@ -74,7 +74,7 @@ public class CreateAndTrackProcesses {
 		for (Process process : processList) {
 			avg+=process.getWT();
 		}
-		MainTest.avgWT=avg/p.size();
+		MainTest.avgWT=avg/processList.size();
 		System.out.println("AVG Waiting Time "+ MainTest.avgWT);
 		return MainTest.avgWT;				
 	}
