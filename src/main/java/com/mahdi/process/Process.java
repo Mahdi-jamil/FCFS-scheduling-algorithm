@@ -34,6 +34,7 @@ public class Process implements Task{
 		if(BurstTime.isEmpty())return -1;
 		return BurstTime.poll();
 	}
+	
 	public Integer getIOTime() {
 		if(IORequest.isEmpty())return null;
 		return IORequest.poll();
@@ -98,14 +99,7 @@ public class Process implements Task{
 		return pid+"";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }

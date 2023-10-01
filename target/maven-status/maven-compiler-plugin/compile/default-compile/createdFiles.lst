@@ -1,9 +1,9 @@
+com\mahdi\scheduler\WaitingQueue.class
+com\mahdi\process\Task.class
+com\mahdi\main\MainTest.class
 com\mahdi\scheduler\CPU.class
 com\mahdi\main\NewState.class
 com\mahdi\scheduler\ReadyQueue.class
 com\mahdi\main\NewState$1.class
-com\mahdi\scheduler\WaitingQueue.class
-com\mahdi\process\Task.class
-com\mahdi\main\MainTest.class
 com\mahdi\scheduler\FCFSDispatcher.class
 com\mahdi\process\Process.class
