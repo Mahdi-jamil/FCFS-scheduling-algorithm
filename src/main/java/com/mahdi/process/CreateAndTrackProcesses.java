@@ -11,7 +11,7 @@ import com.mahdi.main.MainTest;
 import com.mahdi.main.NewState;
 
 public class CreateAndTrackProcesses {
-	private List<Process> p=new ArrayList<>();
+	private List<Process> processList=new ArrayList<>();
 
 	
 	public List<Process> CreateProcesses(String fileName) throws FileNotFoundException {
@@ -51,7 +51,7 @@ public class CreateAndTrackProcesses {
 		    }
 		    count++;
 		    testProcess = new Process(id, at, btTest, IOTest);
-		    p.add(testProcess);
+		    processList.add(testProcess);
 		}
 		MainTest.NUMBER_OF_PROCESSES=count;
 		in.close();
@@ -63,7 +63,7 @@ public class CreateAndTrackProcesses {
 	public void generateReport() {
 		System.out.println("terminated with");
 		System.out.println("Pid AT BT   CT     TT     WT");
-		for(Process process:p) {
+		for(Process process:processList) {
 			System.out.println(process.getInfo());
 		}
 	}
@@ -71,7 +71,7 @@ public class CreateAndTrackProcesses {
 	
 	public float getAvgWaitingTime() {
 		float avg=0;
-		for (Process process : p) {
+		for (Process process : processList) {
 			avg+=process.getWT();
 		}
 		MainTest.avgWT=avg/p.size();
@@ -82,7 +82,7 @@ public class CreateAndTrackProcesses {
 	
 	
 	public void AddToReady(NewState newState) {
-		for(Process process:p) {
+		for(Process process:processList) {
 			newState.addToReady(process);
 		}
 	}
