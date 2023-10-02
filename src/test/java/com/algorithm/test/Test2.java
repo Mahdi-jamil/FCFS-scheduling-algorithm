@@ -1,28 +1,27 @@
-package com.mahdi.test;
+package com.algorithm.test;
 
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import com.mahdi.main.MainTest;
+import com.algorithm.main.MainTest;
 
-public class Test1 {
+public class Test2 {
 	
 	@Test
 	public void test() {
-	    String[] path = {"C:\\scheduling_project\\src\\test\\resources\\Test1.txt"};
+	    String[] path = {"src/test/resources/Test2.txt"};
 	    
 	    // Call the Main method and get the return value
 	    float returnValue = MainTest.Main(path);
 	    
 	    // Define the lower and upper bounds of the expected range
-	    float lowerBound = 3300.0f;  
-	    float upperBound = 4300.0f;  
+	    float lowerBound = 16255.0f;  
+	    float upperBound = 21255.0f;  
 	    
 	    // Check if the return value is within the specified range
 	    boolean isInRange = (returnValue >= lowerBound) && (returnValue <= upperBound);
-	    // Assert that the return value is within the expected range
 	    assertTrue(isInRange);
 	}
 
