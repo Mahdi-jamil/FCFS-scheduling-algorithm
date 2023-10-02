@@ -1,6 +1,8 @@
 package com.algorithm.scheduler;
 
 
+import java.util.concurrent.Semaphore;
+
 import com.algorithm.main.MainTest;
 import com.algorithm.process.Process;
 
@@ -8,48 +10,48 @@ public class FCFSDispatcher implements Runnable {
 	private Process runningProcess;
 	private ReadyQueue readyQueue;
 	private WaitingQueue blocking;
+	private Semaphore semaphore;
 
-	public FCFSDispatcher(ReadyQueue queue, WaitingQueue waitingQueue) {
+	public FCFSDispatcher(ReadyQueue queue, WaitingQueue waitingQueue,Semaphore semaphore) {
 		readyQueue = queue;
 		blocking = waitingQueue;
+		this.semaphore=semaphore;
 	}
 
 	@Override
 	public void run() {
 		Integer bT;
-		while (!Thread.currentThread().isInterrupted()) {
+		boolean done=false;
+		
+		while (!done) {
 				try {
-					runningProcess=readyQueue.getProcess();
+					runningProcess = readyQueue.getProcess();
 				} catch (InterruptedException e) {
 					System.out.println("enable to get a process");
 				}
-			
-				bT=runningProcess.getBurstTime();
-				// This is Burst Time
-				
+				bT = runningProcess.getBurstTime();
 				if(bT>=0) {
 					CPU.run(bT);
-					//Finished BT
 					
 					if(runningProcess.IOQEmpty()) {
 						runningProcess.generateProcessReport();
 						MainTest.NUMBER_OF_PROCESSES--;
 						
 						if(MainTest.NUMBER_OF_PROCESSES==0) {
-							MainTest.terminate();
-							Thread.currentThread().interrupt();
+							semaphore.release();
+							done = true;
 						}
-						
 						
 					}else {
 						blocking.addToWaiting(runningProcess);
 					}
-				}else {
+					
+				}else { // Last Task for the process in IO
 					runningProcess.generateProcessReport();
 					MainTest.NUMBER_OF_PROCESSES--;
-					if(MainTest.NUMBER_OF_PROCESSES==0) {
-						MainTest.terminate();
-						Thread.currentThread().interrupt();
+					if(MainTest.NUMBER_OF_PROCESSES == 0) {
+						semaphore.release();
+						done = true;
 					}
 				}
 		}

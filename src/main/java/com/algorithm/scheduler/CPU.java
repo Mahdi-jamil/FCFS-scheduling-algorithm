@@ -1,6 +1,5 @@
 package com.algorithm.scheduler;
 
-
 public class CPU {
 	
 	public static void run(long bt) {

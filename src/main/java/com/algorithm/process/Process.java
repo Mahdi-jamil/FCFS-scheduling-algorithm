@@ -4,7 +4,7 @@ import java.util.Queue;
 
 import com.algorithm.main.MainTest;
 
-public class Process implements Task{
+public class Process implements Task {
 	private final int pid;
 	private final int ArrivalTime;
 	
@@ -19,7 +19,6 @@ public class Process implements Task{
 		return WT;
 	}
 	
-	
 	public Process(int pid, int arrivalTime, Queue<Integer> burstTime, Queue<Integer> iORequest) {
 		this.pid = pid;
 		ArrivalTime = arrivalTime;
@@ -27,8 +26,6 @@ public class Process implements Task{
 		IORequest = iORequest;
 		calculateCpuBurstTime();
 	}
-	
-	
 	
 	public Integer getBurstTime() {
 		if(BurstTime.isEmpty())return -1;
@@ -44,12 +41,11 @@ public class Process implements Task{
 		if(BurstTime.isEmpty())return true;
 		return false;
 	}
+	
 	public Boolean IOQEmpty() {
 		if(IORequest.isEmpty())return true;
 		return false;
 	}
-	
-	
 
 	@Override
 	public long calculateCT() {
@@ -64,7 +60,6 @@ public class Process implements Task{
 	@Override
 	public float calculateWT() {
 		WT=calculateTT()-(TotalBurstTime*1000);
-		
 		return WT;
 	}
 
@@ -73,16 +68,13 @@ public class Process implements Task{
 		TotalBurstTime=BurstTime.stream()
 						.mapToInt(v->v.intValue())
 						.sum();
-		
 	}
-
 
 	@Override
 	public void generateProcessReport() {
 		
 		finalInfo="P"+pid+"  "+ArrivalTime+" "+TotalBurstTime+" "+calculateCT() +
 				" "+calculateTT()+" "+calculateWT();
-		
 	}
 	
 	public String getInfo() {
@@ -93,13 +85,8 @@ public class Process implements Task{
 		return ArrivalTime;
 	}
 	
-	
-	
 	public String toString() {
 		return pid+"";
 	}
-	
-
-	
 	
 }

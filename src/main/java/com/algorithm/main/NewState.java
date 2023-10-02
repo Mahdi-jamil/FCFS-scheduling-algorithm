@@ -17,7 +17,7 @@ public class NewState {
     public void addToReady(Process process) {
     	Timer timer = new Timer();
           
-          timer.schedule(new TimerTask() {
+    	timer.schedule(new TimerTask() {
               @Override
               public void run() {
             	  System.out.println("process "+process.toString()+" arrives");

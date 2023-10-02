@@ -12,15 +12,13 @@ import com.algorithm.main.NewState;
 
 public class CreateAndTrackProcesses {
 	private List<Process> processList=new ArrayList<>();
-
+	private float avgWT;
 	
 	public List<Process> CreateProcesses(String fileName) throws FileNotFoundException {
 		File file=new File(fileName);
 		Scanner in=new Scanner(file);
 		
-		int count=0;
-		
-		Process testProcess;
+		Process createdProcess;
 		int id;
 		int at;
 		LinkedList<Integer> btTest;
@@ -49,41 +47,43 @@ public class CreateAndTrackProcesses {
 		            IOTest.add(value);
 		        }
 		    }
-		    count++;
-		    testProcess = new Process(id, at, btTest, IOTest);
-		    processList.add(testProcess);
+		    MainTest.NUMBER_OF_PROCESSES++;
+		    createdProcess = new Process(id, at, btTest, IOTest);
+		    processList.add(createdProcess);
 		}
-		MainTest.NUMBER_OF_PROCESSES=count;
+		 
 		in.close();
 		return processList;
 		
 	}
 	
-	
-	public void generateReport() {
-		System.out.println("terminated with");
-		System.out.println("Pid AT BT   CT     TT     WT");
-		for(Process process:processList) {
-			System.out.println(process.getInfo());
-		}
-	}
-	
-	
-	public float getAvgWaitingTime() {
-		float avg=0;
-		for (Process process : processList) {
-			avg+=process.getWT();
-		}
-		MainTest.avgWT=avg/processList.size();
-		System.out.println("AVG Waiting Time "+ MainTest.avgWT);
-		return MainTest.avgWT;				
-	}
-	
-	
-	
 	public void AddToReady(NewState newState) {
-		for(Process process:processList) {
+		for(Process process : processList) {
 			newState.addToReady(process);
 		}
 	}
+	
+	public void generateReport() {
+		System.out.println("Terminated with :\n");
+		System.out.println("Pid AT BT   CT     TT     WT");
+		for (Process process : processList) {
+			System.out.println(process.getInfo());
+		}
+		System.out.println("AVG Waiting Time "+ getAvgWaitingTime());
+	}
+
+	private float getAvgWaitingTime() {
+		avgWT = 0;
+		for (Process process : processList) {
+			avgWT+=process.getWT();
+		}
+		avgWT /= processList.size();
+		return avgWT;				
+	}
+	
+	public float getAvgWT() {
+		return avgWT;
+	}
+	
+
 }

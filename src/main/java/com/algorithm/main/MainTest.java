@@ -1,6 +1,7 @@
 package com.algorithm.main;
 
 import java.io.FileNotFoundException;
+import java.util.concurrent.Semaphore;
 
 import com.algorithm.process.CreateAndTrackProcesses;
 import com.algorithm.scheduler.FCFSDispatcher;
@@ -11,12 +12,11 @@ public class MainTest {
 	
 	public static long START= System.currentTimeMillis();
 	public static int NUMBER_OF_PROCESSES=0;
+	private static Semaphore semaphore=new Semaphore(0);
+	private static CreateAndTrackProcesses tracker;
 
-	private static volatile Boolean terminate=false;
-	public static float avgWT;
-
-	// this function is used by Test Cases 
-	// To run from main just edit line 38 to your File path
+	// This function is used by Test Cases 
+	// To run from main just edit line 37 to your File path
 	public static float Main(String[] args) {
 		try {
 			main(args);
@@ -24,34 +24,30 @@ public class MainTest {
 			System.err.println("FATAL error");
 			e.printStackTrace();
 		}
-		
-		return avgWT;
+		return tracker.getAvgWT();
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		ReadyQueue readyQueue=new ReadyQueue();
 		WaitingQueue waitingQueue=new WaitingQueue(readyQueue);
-		FCFSDispatcher dispatcher=new FCFSDispatcher(readyQueue, waitingQueue);
+		FCFSDispatcher dispatcher=new FCFSDispatcher(readyQueue, waitingQueue,semaphore);
 		
-		CreateAndTrackProcesses tracker=new CreateAndTrackProcesses();
-		
+		tracker=new CreateAndTrackProcesses();
 		tracker.CreateProcesses(args[0]);
-		
 		tracker.AddToReady(new NewState(readyQueue));
 		
 		Thread cpuThread=new Thread(dispatcher);
 		cpuThread.start();
-		while (!terminate); 
+		
+		try {
+			semaphore.acquire();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 		tracker.generateReport();
-		tracker.getAvgWaitingTime();
-		
 	}
 	
 	
-	
-	public static void terminate() {
-		MainTest.terminate=Boolean.TRUE;
-	}
 
 }
