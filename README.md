@@ -19,13 +19,11 @@ This Java program simulates the First-Come-First-Serve (FCFS) scheduling algorit
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
-3. Modify any Test.java files that contains in scr/test/java (change the file path)
-4. Modify the choosen test.txt file to your own processes 
-5. Modify pom.xml to your choosen Test.java file (which one to run)
-6. Run the program using Maven.(mvn clean test or run pom.xml as clean test) (Optional or use method below)
-7. Modify MainTest.java in src/main/java by changing the .txt file
-8. Run from MainTest 
-10. Review the program's output.
+3. Change Path in line 36 in MainTest to any file.txt and just Run Main ( Short Method or Do 4,5,6 )
+4. Modify the choosen test.txt file to your own processes ( default : Test1.txt )
+5. Modify pom.xml to your choosen Test.java file (  default : Test1.java )
+6. Run the program using Maven.(mvn clean test or run pom.xml as clean test)
+7. Review the program's output.
 
 
 ###  Example Output
